@@ -2,7 +2,7 @@ import React from 'react';
 
 const stats = [
   { label: 'Years Experience', value: '3+' },
-  { label: 'Projects Built', value: '20+' },
+  { label: 'Projects Built', value: '6+' },
   { label: 'Technologies', value: '15+' },
   { label: 'Open Source Contributions', value: '10+' },
 ];
@@ -18,21 +18,23 @@ const About = () => {
 
             <div className="space-y-4" style={{ color: 'var(--color-text-secondary)' }}>
               <p className="leading-relaxed text-base">
-                I'm a passionate Full Stack Developer with a strong foundation in building
-                scalable web applications. I thrive on turning complex problems into clean,
-                elegant solutions.
+                I'm an AI Engineer and Python Developer with over 2 years of experience building
+                scalable backend systems and intelligent applications. I specialize in Generative AI,
+                LLMs, and RAG-based solutions, turning complex data and workflows into impactful,
+                production-ready systems.
               </p>
               <p className="leading-relaxed text-base">
-                My journey in software development started with curiosity and grew into a
-                professional pursuit of excellence. I specialize in React, Node.js, and
-                cloud technologies, always staying current with emerging trends.
+                My journey began with backend development and evolved into designing AI-powered
+                systems, including voice agents, automated grading platforms, and LLM-driven pipelines.
+                I have hands-on experience with LangChain, OpenAI APIs, and cloud technologies like AWS,
+                focusing on performance, scalability, and reliability.
               </p>
               <p className="leading-relaxed text-base">
-                When I'm not coding, I enjoy contributing to open source projects, exploring
-                new frameworks, and sharing knowledge with the developer community.
+                Beyond development, I actively explore advancements in AI, experiment with emerging
+                frameworks, and build real-world applications that leverage automation, data pipelines,
+                and conversational intelligence.
               </p>
             </div>
-
             <div className="flex flex-wrap gap-3 mt-8">
               {['Problem Solver', 'Team Player', 'Quick Learner', 'Detail Oriented'].map(trait => (
                 <span key={trait} className="tag">{trait}</span>
@@ -51,7 +53,7 @@ const About = () => {
                 </svg>
                 Download Resume
               </a>
-              <a href="#github" className="btn-secondary">
+              <a href="https://github.com/SanaAkram" className="btn-secondary">
                 View GitHub
               </a>
             </div>
@@ -75,11 +77,11 @@ const About = () => {
                       color: 'white',
                     }}
                   >
-                    SG
+                    SA
                   </div>
                   <div>
-                    <p className="font-semibold text-lg" style={{ color: 'var(--color-text-primary)' }}>Sumit Gaikwad</p>
-                    <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>Full Stack Developer</p>
+                    <p className="font-semibold text-lg" style={{ color: 'var(--color-text-primary)' }}>Sana Akram</p>
+                    <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>AI Engineer</p>
                   </div>
                 </div>
 

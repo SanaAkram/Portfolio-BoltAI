@@ -85,20 +85,19 @@ const Hero = () => {
         <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
             <span style={{ color: 'var(--color-text-primary)' }}>Hi, I'm </span>
-            <span className="gradient-text">Sumit Gaikwad</span>
+            <span className="gradient-text">Sana Akram</span>
           </h1>
         </div>
 
         <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
           <p className="text-xl sm:text-2xl font-medium mb-4" style={{ color: 'var(--color-text-secondary)' }}>
-            Full Stack Developer &amp; Software Engineer
+            AI & Automation Engineer
           </p>
         </div>
 
         <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.55s', animationFillMode: 'forwards' }}>
           <p className="text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-            I build scalable web applications with modern technologies. Passionate about clean code,
-            great user experiences, and solving complex problems.
+          AI Engineer with 2+ years of experience in Python development and building scalable backend systems, now specializing in Generative AI, LLMs, and RAG-based applications. Skilled in developing intelligent systems using LangChain, OpenAI APIs, and transformer-based models. Strong background in APIs, automation, and cloud deployment, with hands-on experience building AI-powered applications and retrieval systems.
           </p>
         </div>
 
@@ -125,7 +124,7 @@ const Hero = () => {
           style={{ animationDelay: '0.85s', animationFillMode: 'forwards' }}
         >
           <a
-            href="https://github.com"
+            href="https://github.com/SanaAkram"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-all duration-200 hover:scale-110"
@@ -138,7 +137,7 @@ const Hero = () => {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in//sana-akram582"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-all duration-200 hover:scale-110"
@@ -151,7 +150,7 @@ const Hero = () => {
             </svg>
           </a>
           <a
-            href="mailto:sumit@example.com"
+            href="mailto:sanaakram582@gmail.com"
             className="transition-all duration-200 hover:scale-110"
             style={{ color: 'var(--color-text-secondary)' }}
             onMouseEnter={e => e.currentTarget.style.color = 'var(--color-accent)'}

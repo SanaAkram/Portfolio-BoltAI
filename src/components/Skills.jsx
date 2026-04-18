@@ -2,70 +2,80 @@ import React from 'react';
 
 const skillCategories = [
   {
-    category: 'Frontend',
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    category: 'Languages',
+    icon: skillCategories?.[0]?.icon, // keep existing icon
     skills: [
-      { name: 'React.js', level: 95 },
-      { name: 'TypeScript', level: 88 },
-      { name: 'Next.js', level: 85 },
-      { name: 'Tailwind CSS', level: 92 },
-      { name: 'Vue.js', level: 75 },
+      { name: 'Python', level: 90 },
     ],
   },
   {
-    category: 'Backend',
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
-      </svg>
-    ),
+    category: 'AI / Machine Learning',
+    icon: skillCategories?.[1]?.icon,
     skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Express.js', level: 88 },
-      { name: 'Python', level: 80 },
-      { name: 'GraphQL', level: 78 },
-      { name: 'REST APIs', level: 95 },
+      { name: 'LLMs', level: 90 },
+      { name: 'Prompt Engineering', level: 92 },
+      { name: 'RAG Systems', level: 88 },
     ],
   },
   {
-    category: 'Database',
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-      </svg>
-    ),
+    category: 'Frameworks & APIs',
+    icon: skillCategories?.[2]?.icon,
+    skills: [
+      { name: 'Flask', level: 90 },
+      { name: 'Django', level: 85 },
+      { name: 'FastAPI', level: 85 },
+      { name: 'REST APIs', level: 92 },
+      { name: 'OpenAI APIs', level: 90 },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    icon: skillCategories?.[3]?.icon,
+    skills: [
+      { name: 'AWS (EC2, RDS, Lambda)', level: 85 },
+      { name: 'AWS SAM', level: 80 },
+      { name: 'State Machines', level: 80 },
+      { name: 'Docker', level: 82 },
+      { name: 'CI/CD Basics', level: 75 },
+    ],
+  },
+  {
+    category: 'Data & Scraping',
+    icon: skillCategories?.[2]?.icon,
+    skills: [
+      { name: 'Pandas', level: 88 },
+      { name: 'NumPy', level: 85 },
+      { name: 'Selenium', level: 90 },
+      { name: 'BeautifulSoup', level: 88 },
+    ],
+  },
+  {
+    category: 'Databases',
+    icon: skillCategories?.[2]?.icon,
     skills: [
       { name: 'PostgreSQL', level: 85 },
-      { name: 'MongoDB', level: 82 },
-      { name: 'Redis', level: 75 },
-      { name: 'Supabase', level: 88 },
-      { name: 'MySQL', level: 80 },
-    ],
-  },
-  {
-    category: 'DevOps & Cloud',
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-      </svg>
-    ),
-    skills: [
-      { name: 'AWS', level: 78 },
-      { name: 'Docker', level: 82 },
-      { name: 'Git & GitHub', level: 95 },
-      { name: 'CI/CD', level: 75 },
-      { name: 'Linux', level: 80 },
+      { name: 'Dynamo', level: 60 },
     ],
   },
 ];
 
 const tools = [
-  'VS Code', 'Figma', 'Postman', 'Jest', 'Webpack', 'Vite',
-  'Prisma', 'Socket.io', 'Stripe', 'Vercel', 'Netlify', 'GitHub Actions',
+  'Git',
+  'GitHub',
+  'Docker',
+  'Postman',
+  'Twilio',
+  'Claude',
+
+  // Voice AI / LLM Ecosystem
+  'OpenAI',
+  'LangChain',
+  'Vocode',
+  'VAPI',
+  'LiveKit',
+  'ElevenLabs',
+  'Rime',
+  'Pipecat',
 ];
 
 const SkillBar = ({ name, level }) => {
