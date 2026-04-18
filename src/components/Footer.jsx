@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-lg gradient-text">Sumit Gaikwad</span>
+            <span className="font-bold text-lg gradient-text">Sana Akram</span>
           </div>
 
           <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
@@ -15,7 +15,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/SanaAkram"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-all duration-200 hover:scale-110"
@@ -28,7 +28,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sana-akram582"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-all duration-200 hover:scale-110"
@@ -41,7 +41,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="mailto:sumit@example.com"
+              href="mailto:sanaakram582@gmail.com"
               className="transition-all duration-200 hover:scale-110"
               style={{ color: 'var(--color-text-secondary)' }}
               onMouseEnter={e => e.currentTarget.style.color = 'var(--color-accent)'}

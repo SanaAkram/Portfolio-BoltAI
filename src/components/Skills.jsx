@@ -3,14 +3,43 @@ import React from 'react';
 const skillCategories = [
   {
     category: 'Languages',
-    icon: skillCategories?.[0]?.icon, // keep existing icon
+    icon: (
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Snake body */}
+          <path d="M12 2c-2.5 0-4 2-4 4s1.5 3 3.5 3h3C17 9 18 10.5 18 12.5S16.5 16 14 16h-3c-2.5 0-4 1.5-4 3.5S9.5 23 12 23" />
+      
+          {/* Snake head */}
+          <circle cx="12" cy="2.5" r="1" fill="currentColor" />
+      
+          {/* Eye */}
+          <circle cx="12.3" cy="2.3" r="0.2" fill="#fff" />
+        </svg>
+      
+    ),
     skills: [
       { name: 'Python', level: 90 },
     ],
   },
   {
     category: 'AI / Machine Learning',
-    icon: skillCategories?.[1]?.icon,
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <circle cx="6" cy="6" r="2"/>
+        <circle cx="18" cy="6" r="2"/>
+        <circle cx="6" cy="18" r="2"/>
+        <circle cx="18" cy="18" r="2"/>
+        <path d="M8 6h8M6 8v8M18 8v8M8 18h8"/>
+      </svg>
+    ),
     skills: [
       { name: 'LLMs', level: 90 },
       { name: 'Prompt Engineering', level: 92 },
@@ -19,7 +48,12 @@ const skillCategories = [
   },
   {
     category: 'Frameworks & APIs',
-    icon: skillCategories?.[2]?.icon,
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="6" rx="2"/>
+      <rect x="3" y="14" width="18" height="6" rx="2"/>
+    </svg>
+    ),
     skills: [
       { name: 'Flask', level: 90 },
       { name: 'Django', level: 85 },
@@ -30,7 +64,11 @@ const skillCategories = [
   },
   {
     category: 'Cloud & DevOps',
-    icon: skillCategories?.[3]?.icon,
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999A5 5 0 106 13" />
+      </svg>
+    ),
     skills: [
       { name: 'AWS (EC2, RDS, Lambda)', level: 85 },
       { name: 'AWS SAM', level: 80 },
@@ -41,7 +79,13 @@ const skillCategories = [
   },
   {
     category: 'Data & Scraping',
-    icon: skillCategories?.[2]?.icon,
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+        <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/>
+      </svg>
+    ),
     skills: [
       { name: 'Pandas', level: 88 },
       { name: 'NumPy', level: 85 },
@@ -51,10 +95,14 @@ const skillCategories = [
   },
   {
     category: 'Databases',
-    icon: skillCategories?.[2]?.icon,
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="8" ry="3"/>
+        <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/>
+      </svg>
+    ),
     skills: [
       { name: 'PostgreSQL', level: 85 },
-      { name: 'Dynamo', level: 60 },
     ],
   },
 ];
@@ -66,8 +114,6 @@ const tools = [
   'Postman',
   'Twilio',
   'Claude',
-
-  // Voice AI / LLM Ecosystem
   'OpenAI',
   'LangChain',
   'Vocode',
@@ -125,6 +171,7 @@ const Skills = () => {
                   {cat.category}
                 </h3>
               </div>
+
               <div className="space-y-4">
                 {cat.skills.map(skill => (
                   <SkillBar key={skill.name} name={skill.name} level={skill.level} />
@@ -147,16 +194,6 @@ const Skills = () => {
                   background: 'rgba(15, 23, 42, 0.8)',
                   color: 'var(--color-text-secondary)',
                   border: '1px solid var(--color-border)',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(56, 189, 248, 0.4)';
-                  e.currentTarget.style.color = 'var(--color-accent)';
-                  e.currentTarget.style.background = 'rgba(56, 189, 248, 0.05)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'var(--color-border)';
-                  e.currentTarget.style.color = 'var(--color-text-secondary)';
-                  e.currentTarget.style.background = 'rgba(15, 23, 42, 0.8)';
                 }}
               >
                 {tool}

@@ -8,7 +8,6 @@ const Hero = () => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let animFrame;
-
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
