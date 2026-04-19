@@ -102,7 +102,7 @@ const Header = () => {
             href="#home"
             className="font-bold text-lg gradient-text hidden sm:block"
           >
-            SG
+            SA
           </a>
 
           <div className="flex items-center space-x-1 mx-auto sm:mx-0">
@@ -144,3 +144,4 @@ const Header = () => {
 };
 
 export default Header;
+

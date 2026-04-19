@@ -2,70 +2,126 @@ import React from 'react';
 
 const skillCategories = [
   {
-    category: 'Frontend',
+    category: 'Languages',
     icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Snake body */}
+          <path d="M12 2c-2.5 0-4 2-4 4s1.5 3 3.5 3h3C17 9 18 10.5 18 12.5S16.5 16 14 16h-3c-2.5 0-4 1.5-4 3.5S9.5 23 12 23" />
+      
+          {/* Snake head */}
+          <circle cx="12" cy="2.5" r="1" fill="currentColor" />
+      
+          {/* Eye */}
+          <circle cx="12.3" cy="2.3" r="0.2" fill="#fff" />
+        </svg>
+      
     ),
     skills: [
-      { name: 'React.js', level: 95 },
-      { name: 'TypeScript', level: 88 },
-      { name: 'Next.js', level: 85 },
-      { name: 'Tailwind CSS', level: 92 },
-      { name: 'Vue.js', level: 75 },
+      { name: 'Python', level: 90 },
     ],
   },
   {
-    category: 'Backend',
+    category: 'AI / Machine Learning',
     icon: (
       <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+        <circle cx="6" cy="6" r="2"/>
+        <circle cx="18" cy="6" r="2"/>
+        <circle cx="6" cy="18" r="2"/>
+        <circle cx="18" cy="18" r="2"/>
+        <path d="M8 6h8M6 8v8M18 8v8M8 18h8"/>
       </svg>
     ),
     skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'Express.js', level: 88 },
-      { name: 'Python', level: 80 },
-      { name: 'GraphQL', level: 78 },
-      { name: 'REST APIs', level: 95 },
+      { name: 'LLMs', level: 90 },
+      { name: 'Prompt Engineering', level: 92 },
+      { name: 'RAG Systems', level: 88 },
     ],
   },
   {
-    category: 'Database',
+    category: 'Frameworks & APIs',
     icon: (
       <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+      <rect x="3" y="4" width="18" height="6" rx="2"/>
+      <rect x="3" y="14" width="18" height="6" rx="2"/>
+    </svg>
+    ),
+    skills: [
+      { name: 'Flask', level: 90 },
+      { name: 'Django', level: 85 },
+      { name: 'FastAPI', level: 85 },
+      { name: 'REST APIs', level: 92 },
+      { name: 'OpenAI APIs', level: 90 },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999A5 5 0 106 13" />
+      </svg>
+    ),
+    skills: [
+      { name: 'AWS (EC2, RDS, Lambda)', level: 85 },
+      { name: 'AWS SAM', level: 80 },
+      { name: 'State Machines', level: 80 },
+      { name: 'Docker', level: 82 },
+      { name: 'CI/CD Basics', level: 75 },
+    ],
+  },
+  {
+    category: 'Data & Scraping',
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+        <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/>
+      </svg>
+    ),
+    skills: [
+      { name: 'Pandas', level: 88 },
+      { name: 'NumPy', level: 85 },
+      { name: 'Selenium', level: 90 },
+      { name: 'BeautifulSoup', level: 88 },
+    ],
+  },
+  {
+    category: 'Databases',
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="8" ry="3"/>
+        <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/>
       </svg>
     ),
     skills: [
       { name: 'PostgreSQL', level: 85 },
-      { name: 'MongoDB', level: 82 },
-      { name: 'Redis', level: 75 },
-      { name: 'Supabase', level: 88 },
-      { name: 'MySQL', level: 80 },
-    ],
-  },
-  {
-    category: 'DevOps & Cloud',
-    icon: (
-      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-      </svg>
-    ),
-    skills: [
-      { name: 'AWS', level: 78 },
-      { name: 'Docker', level: 82 },
-      { name: 'Git & GitHub', level: 95 },
-      { name: 'CI/CD', level: 75 },
-      { name: 'Linux', level: 80 },
     ],
   },
 ];
 
 const tools = [
-  'VS Code', 'Figma', 'Postman', 'Jest', 'Webpack', 'Vite',
-  'Prisma', 'Socket.io', 'Stripe', 'Vercel', 'Netlify', 'GitHub Actions',
+  'Git',
+  'GitHub',
+  'Docker',
+  'Postman',
+  'Twilio',
+  'Claude',
+  'OpenAI',
+  'LangChain',
+  'Vocode',
+  'VAPI',
+  'LiveKit',
+  'ElevenLabs',
+  'Rime',
+  'Pipecat',
 ];
 
 const SkillBar = ({ name, level }) => {
@@ -115,6 +171,7 @@ const Skills = () => {
                   {cat.category}
                 </h3>
               </div>
+
               <div className="space-y-4">
                 {cat.skills.map(skill => (
                   <SkillBar key={skill.name} name={skill.name} level={skill.level} />
@@ -137,16 +194,6 @@ const Skills = () => {
                   background: 'rgba(15, 23, 42, 0.8)',
                   color: 'var(--color-text-secondary)',
                   border: '1px solid var(--color-border)',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(56, 189, 248, 0.4)';
-                  e.currentTarget.style.color = 'var(--color-accent)';
-                  e.currentTarget.style.background = 'rgba(56, 189, 248, 0.05)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'var(--color-border)';
-                  e.currentTarget.style.color = 'var(--color-text-secondary)';
-                  e.currentTarget.style.background = 'rgba(15, 23, 42, 0.8)';
                 }}
               >
                 {tool}

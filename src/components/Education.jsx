@@ -2,43 +2,50 @@ import React from 'react';
 
 const education = [
   {
-    degree: 'Bachelor of Engineering',
+    degree: 'Bachelor of Science',
     field: 'Computer Science',
-    institution: 'Maharashtra Institute of Technology',
-    location: 'Pune, Maharashtra',
-    period: '2019 — 2023',
-    grade: 'First Class with Distinction',
+    institution: 'University of Central Punjab',
+    location: 'Lahore, Pakistan',
+    period: '2018 — 2022',
+    grade: '',
     highlights: [
       'Data Structures & Algorithms',
+      'Database Systems',
       'Operating Systems',
-      'Database Management Systems',
-      'Computer Networks',
       'Software Engineering',
+      'Computer Networks',
     ],
     icon: '🎓',
   },
   {
-    degree: 'Higher Secondary Certificate',
-    field: 'Science (PCM + CS)',
-    institution: 'Symbiosis Junior College',
-    location: 'Pune, Maharashtra',
-    period: '2017 — 2019',
-    grade: '92.4%',
+    degree: 'Intermediate (ICS - Physics)',
+    field: 'Computer Science',
+    institution: 'Punjab College',
+    location: 'Gujrat, Pakistan',
+    period: '2016 — 2018',
+    grade: '',
     highlights: [
       'Physics',
-      'Chemistry',
-      'Mathematics',
       'Computer Science',
+      'Mathematics',
     ],
     icon: '📚',
   },
 ];
 
 const certifications = [
-  { name: 'AWS Certified Developer – Associate', issuer: 'Amazon Web Services', year: '2023' },
-  { name: 'Meta Front-End Developer', issuer: 'Coursera / Meta', year: '2022' },
-  { name: 'Node.js Application Development', issuer: 'OpenJS Foundation', year: '2023' },
-  { name: 'Google Cloud Foundations', issuer: 'Google Cloud', year: '2022' },
+  {
+    name: 'IBM Generative AI Engineering Professional Certificate',
+    issuer: 'Coursera (IBM)',
+    year: '2026',
+    link: 'https://www.coursera.org/account/accomplishments/specialization/UHTYFWL7HNE6',
+  },
+  {
+    name: 'IBM AI Developer Professional Certificate',
+    issuer: 'Coursera (IBM)',
+    year: '2026',
+    link: 'https://www.coursera.org/account/accomplishments/specialization/RF793MCA5ZTP',
+  },
 ];
 
 const Education = () => {
@@ -71,12 +78,10 @@ const Education = () => {
                     <p className="font-medium text-sm mb-1" style={{ color: 'var(--color-accent)' }}>
                       {edu.field}
                     </p>
-                    <p className="text-sm mb-1" style={{ color: 'var(--color-text-secondary)' }}>
+                    <p className="text-sm mb-3" style={{ color: 'var(--color-text-secondary)' }}>
                       {edu.institution} • {edu.location}
                     </p>
-                    <p className="text-xs mb-3" style={{ color: 'var(--color-text-secondary)' }}>
-                      <span className="text-green-400 font-medium">{edu.grade}</span>
-                    </p>
+
                     <div className="flex flex-wrap gap-2">
                       {edu.highlights.map(h => (
                         <span
@@ -118,14 +123,24 @@ const Education = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-sm font-medium leading-tight" style={{ color: 'var(--color-text-primary)' }}>
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <p
+                        className="text-sm font-medium leading-tight transition-colors"
+                        style={{ color: 'var(--color-text-primary)' }}
+                        onMouseEnter={e => e.currentTarget.style.color = 'var(--color-accent)'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'var(--color-text-primary)'}
+                      >
                         {cert.name}
                       </p>
                       <p className="text-xs mt-1" style={{ color: 'var(--color-text-secondary)' }}>
                         {cert.issuer} · {cert.year}
                       </p>
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>
