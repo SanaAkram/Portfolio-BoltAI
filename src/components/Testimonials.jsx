@@ -54,9 +54,23 @@ const TestimonialsCarousel = () => {
     <section className="py-24" id="testimonials">
       <div className="max-w-6xl mx-auto px-4">
 
-        <h2 className="section-heading text-center mb-12">
-          Client Testimonials
-        </h2>
+      <h2 className="section-heading text-center mb-12 flex items-center justify-center gap-2">
+         <svg          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="44"
+          height="44"
+          fill="currentColor"
+          style={{ display: 'inline-block' }}
+        >
+          <path
+            fillRule="evenodd"
+            d="M18.37 19.002H5.63v-1.867h12.74v1.867zm.02-3.736H5.608L3 8.314l4.992 1.664L12 5l4.008 4.978L21 8.314l-2.61 6.952z"
+            clipRule="evenodd"
+          />
+        </svg>
+
+        100% Job Success Score
+      </h2>
         <div className="text-center mb-10">
           <motion.a
           href="https://www.upwork.com/freelancers/~019a6fa4fac7ad0aa4"
