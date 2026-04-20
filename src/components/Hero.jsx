@@ -96,7 +96,7 @@ const Hero = () => {
 
         <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.55s', animationFillMode: 'forwards' }}>
           <p className="text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-          AI Engineer with 2+ years of experience in Python development and building scalable backend systems, now specializing in Generative AI, LLMs, and RAG-based applications. Skilled in developing intelligent systems using LangChain, OpenAI APIs, and transformer-based models. Strong background in APIs, automation, and cloud deployment, with hands-on experience building AI-powered applications and retrieval systems.
+          AI Engineer with 3+ years of experience in Python development and building scalable backend systems, now specializing in Generative AI, LLMs, and RAG-based applications. Skilled in developing intelligent systems using LangChain, OpenAI APIs, and transformer-based models. Strong background in APIs, automation, and cloud deployment, with hands-on experience building AI-powered applications and retrieval systems.
           </p>
         </div>
 
