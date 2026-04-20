@@ -41,22 +41,71 @@ const About = () => {
               ))}
             </div>
 
-            <div className="flex gap-4 mt-8">
-            <a
-              href="https://drive.google.com/file/d/1caIjAjuHK0hk-Tj3GMedSoWqnkBugbZ1/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Resume
-              </a>
-              <a href="https://github.com/SanaAkram" className="btn-secondary">
-                View GitHub
-              </a>
-            </div>
+            <div className="flex flex-wrap gap-4 mt-8">
+
+  {/* Resume */}
+  <a
+    href="https://drive.google.com/file/d/1caIjAjuHK0hk-Tj3GMedSoWqnkBugbZ1/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold btn-primary"
+  >
+    <svg
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+      />
+    </svg>
+    Download Resume
+  </a>
+
+  {/* GitHub */}
+  <a
+    href="https://github.com/SanaAkram"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold btn-secondary"
+  >
+    <img
+      src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg"
+      width="18"
+      height="18"
+      alt="GitHub"
+      style={{ display: 'block' }}
+    />
+    View GitHub
+  </a>
+
+  {/* Upwork */}
+  <a
+    href="https://www.upwork.com/freelancers/~019a6fa4fac7ad0aa4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold"
+    style={{
+      background: '#14a800',
+      color: '#fff',
+    }}
+  >
+    <img
+      src="https://cdn.simpleicons.org/upwork"
+      width="18"
+      height="18"
+      alt="Upwork"
+      style={{ display: 'block' }}
+    />
+    Hire Me
+  </a>
+
+</div>
           </div>
 
           <div>

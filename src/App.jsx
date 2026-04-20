@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './index.css';
+import TestimonialsCarousel from './components/Testimonials';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <TestimonialsCarousel />
         <Education />
         <Skills />
         <Contact />
