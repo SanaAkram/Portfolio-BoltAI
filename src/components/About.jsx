@@ -44,8 +44,8 @@ const About = () => {
             <div className="flex gap-4 mt-8">
               <a
                 href="/https://drive.google.com/file/d/1caIjAjuHK0hk-Tj3GMedSoWqnkBugbZ1/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+                // target="_blank"
+                // rel="noopener noreferrer"
                 className="btn-primary"
               >
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
