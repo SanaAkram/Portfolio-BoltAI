@@ -43,7 +43,7 @@ const About = () => {
 
             <div className="flex gap-4 mt-8">
               <a
-                href="/resume.pdf"
+                href="/Sana Akram - AI Engineer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
