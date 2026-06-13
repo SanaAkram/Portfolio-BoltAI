@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 const projects = [
   {
+    title: 'InboxPilot — AI Email Workflow Automation',
+    description: 'Built a full-stack AI platform that connects to Gmail via OAuth, classifies emails with Claude AI, extracts actionable tasks, and generates daily briefings. Features a Next.js dashboard with real-time analytics and a FastAPI backend with PostgreSQL.',
+    tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'Claude AI', 'PostgreSQL', 'Docker', 'Google OAuth'],
+    github: 'https://github.com/SanaAkram/InboxPilot',
+    demo: null,
+    video: 'https://www.loom.com/embed/12dc7c49b0b84d4c9b3904dedf46a3ee',
+    featured: true,
+  },
+  {
     title: 'LiveKit X Memory Arcs',
     description: 'Built real-time AI voice agents using LiveKit library for conversational handling of Memory Arcs. Implemented STT/TTS pipelines, low-latency streaming, and intelligent fallback logic for scalable conversational systems.',
     tags: ['Python', 'LiveKit', 'Vocode', 'AWS SAM', 'LLMs', 'Realtime Systems'],
@@ -60,22 +69,40 @@ const projects = [
 const ProjectCard = ({ project }) => {
   return (
     <div className="glass-card rounded-xl overflow-hidden group">
-      <div className="relative overflow-hidden h-48">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div
-          className="absolute inset-0 transition-opacity duration-300"
-          style={{
-            background: 'linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%)',
-          }}
-        />
-        {project.featured && (
-          <div className="absolute top-3 left-3">
-            <span className="tag text-xs">Featured</span>
+      <div className="relative overflow-hidden" style={{ height: project.video ? 'auto' : '12rem' }}>
+        {project.video ? (
+          <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src={project.video}
+              frameBorder="0"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+            {project.featured && (
+              <div className="absolute top-3 left-3 z-10">
+                <span className="tag text-xs">Featured</span>
+              </div>
+            )}
           </div>
+        ) : (
+          <>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              className="absolute inset-0 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%)',
+              }}
+            />
+            {project.featured && (
+              <div className="absolute top-3 left-3">
+                <span className="tag text-xs">Featured</span>
+              </div>
+            )}
+          </>
         )}
       </div>
 
