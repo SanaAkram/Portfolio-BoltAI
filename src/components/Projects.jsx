@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const projects = [
   {
     title: 'InboxPilot — AI Email Workflow Automation',
-    description: 'Built a full-stack AI platform that connects to Gmail via OAuth, classifies emails with Claude AI, extracts actionable tasks, and generates daily briefings. Features a Next.js dashboard with real-time analytics and a FastAPI backend with PostgreSQL.',
-    tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'Claude AI', 'PostgreSQL', 'Docker', 'Google OAuth'],
+    description: 'Built a full-stack AI platform that connects to Gmail via OAuth, classifies emails with Open AI, extracts actionable tasks, and generates daily briefings. Features a Next.js dashboard with real-time analytics and a FastAPI backend with PostgreSQL.',
+    tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'Google OAuth'],
     github: 'https://github.com/SanaAkram/InboxPilot',
     demo: null,
     video: 'https://www.loom.com/embed/12dc7c49b0b84d4c9b3904dedf46a3ee',
