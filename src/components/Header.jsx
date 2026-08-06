@@ -29,6 +29,15 @@ const navLinks = [
     ),
   },
   {
+    href: '#saas-products',
+    label: 'Products',
+    icon: (
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 256 256" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M112,32H48A16,16,0,0,0,32,48v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V48A16,16,0,0,0,112,32Zm0,80H48V48h64Zm96-80H144a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,80H144V48h64ZM112,144H48a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V160A16,16,0,0,0,112,144Zm0,80H48V160h64Zm96-80H144a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V160A16,16,0,0,0,208,144Zm0,80H144V160h64Z" />
+      </svg>
+    ),
+  },
+  {
     href: '#testimonials',
     label: 'Testimonials',
     icon: (
