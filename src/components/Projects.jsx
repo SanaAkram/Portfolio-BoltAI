@@ -24,7 +24,7 @@ const projects = [
     description: 'Developed an AI-powered grading platform that evaluates call transcripts using LLMs. Automated QA processes by scoring agent performance and generating actionable insights using prompt engineering.',
     tags: ['Python', 'OpenAI', 'Prompt Engineering', 'LLMs', 'AWS Step Functions'],
     github: 'https://github.com/SanaAkram',
-    demo: null,
+    demo: 'https://www.ylopo.com/ylopo-ai-voice',
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
     featured: true,
   },
@@ -33,7 +33,7 @@ const projects = [
     description: 'Built backend systems to process transcripts, generate insights, and classify leads using LLM pipelines. Designed APIs with Flask, YAML-based prompts, and implemented robust testing using Pytest.',
     tags: ['Flask', 'LLMs', 'Pytest', 'REST APIs', 'Data Pipelines'],
     github: 'https://github.com/SanaAkram',
-    demo: null,
+    demo: 'https://www.ylopo.com/ylopo-ai-voice',
     image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
     featured: true,
   },
@@ -42,7 +42,7 @@ const projects = [
     description: 'Architected a complete AI workflow including Eligibility Service, Dialer, Vocode, Transcript Processing, Insights Engine, and Grading System. Ensured scalability, reliability, and low-latency processing.',
     tags: ['System Design', 'AWS', 'State Machines', 'Distributed Systems'],
     github: 'https://github.com/SanaAkram',
-    demo: null,
+    demo: 'https://www.ylopo.com/ylopo-ai-voice',
     image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
     featured: false,
   },
@@ -60,7 +60,7 @@ const projects = [
     description: 'Developed an AI-powered virtual tour system combining image classification with automated video generation for real estate listings.',
     tags: ['Python', 'Computer Vision', 'Automation', 'AI'],
     github: 'https://github.com/SanaAkram',
-    demo: null,
+    demo: 'https://www.ylopo.com/virtual-house-tours',
     image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
     featured: false,
   },
@@ -180,7 +180,7 @@ const Projects = () => {
             <h2 className="section-heading">Projects</h2>
           </div>
           <a
-            href="https://github.com"
+            href="https://github.com/SanaAkram"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 sm:mt-0 flex items-center gap-2 text-sm font-medium transition-colors duration-200"
