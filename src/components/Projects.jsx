@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 
 const projects = [
   {
-    title: 'InboxPilot — AI Email Workflow Automation',
-    description: 'Built a full-stack AI platform that connects to Gmail via OAuth, classifies emails with Open AI, extracts actionable tasks, and generates daily briefings. Features a Next.js dashboard with real-time analytics and a FastAPI backend with PostgreSQL.',
-    tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker', 'Google OAuth'],
-    github: 'https://github.com/SanaAkram/InboxPilot',
-    demo: null,
-    video: 'https://www.loom.com/embed/12dc7c49b0b84d4c9b3904dedf46a3ee',
-    featured: true,
-  },
-  {
     title: 'LiveKit X Memory Arcs',
     description: 'Built real-time AI voice agents using LiveKit library for conversational handling of Memory Arcs. Implemented STT/TTS pipelines, low-latency streaming, and intelligent fallback logic for scalable conversational systems.',
     tags: ['Python', 'LiveKit', 'Vocode', 'AWS SAM', 'LLMs', 'Realtime Systems'],

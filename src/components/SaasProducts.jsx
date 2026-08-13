@@ -27,6 +27,45 @@ const products = [
     url: 'https://d26svesl0jm0n7.cloudfront.net',
     cta: 'Visit Recruit-AI',
   },
+  {
+    name: 'InboxPilot',
+    tagline: 'AI email workflow automation',
+    description:
+      'A full-stack AI platform that connects to Gmail via OAuth, classifies incoming email with OpenAI, extracts actionable tasks, and generates daily briefings. Next.js dashboard with real-time analytics, FastAPI backend, PostgreSQL, containerized with Docker.',
+    tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker'],
+    stats: ['Gmail OAuth intake', 'LLM email classification', 'Daily AI-generated briefings'],
+    status: 'Open Source',
+    accent: '#38bdf8',
+    image: null,
+    url: 'https://github.com/SanaAkram/InboxPilot',
+    cta: 'View on GitHub',
+  },
+  {
+    name: 'Sana AI',
+    tagline: "The AI-powered portfolio you'd chat with instead of scrolling",
+    description:
+      "An interactive portfolio built as an AI persona instead of static sections — visitors ask 'Sana AI' questions and it answers using this exact real background, grounded in a knowledge base instead of freely improvising. Built with React, TypeScript, Tailwind, Framer Motion, a WebGL fluid cursor effect, and an OpenAI-backed Edge Function.",
+    tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'OpenAI'],
+    stats: ['Streaming AI chat', 'Interactive WebGL fluid background', 'Grounded, not freely improvised'],
+    status: 'Live',
+    accent: '#a78bfa',
+    image: '/images/sana-ai-banner.png',
+    url: 'https://portfolio-ai-chi-navy.vercel.app/',
+    cta: 'Chat with Sana AI',
+  },
+  {
+    name: 'codewithsana.vercel.app',
+    tagline: 'My classic single-page portfolio',
+    description:
+      "A traditional portfolio site — About, Projects, SaaS Products, Education, Skills, and Contact all in one scrollable page. You're looking at it right now.",
+    tags: ['React', 'Vite', 'Tailwind'],
+    stats: ['Full case-study project write-ups', 'Client testimonials', 'Downloadable résumé'],
+    status: 'Live',
+    accent: '#38bdf8',
+    image: '/images/codewithsana-banner.png',
+    url: 'https://codewithsana.vercel.app/',
+    cta: 'Visit Site',
+  },
 ];
 
 const ProductCard = ({ product }) => {
@@ -34,13 +73,25 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="glass-card rounded-xl overflow-hidden group flex flex-col h-full">
-      {/* Banner — real screenshot of the live product */}
+      {/* Banner — real screenshot of the live product, or a plain gradient fallback */}
       <div className="relative overflow-hidden" style={{ height: '12rem' }}>
-        <img
-          src={product.image}
-          alt={`${product.name} homepage screenshot`}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={`${product.name} homepage screenshot`}
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center text-4xl font-bold"
+            style={{
+              background: `linear-gradient(135deg, ${product.accent}25, rgba(15, 23, 42, 0.9))`,
+              color: `${product.accent}90`,
+            }}
+          >
+            {product.name.slice(0, 2).toUpperCase()}
+          </div>
+        )}
         <div
           className="absolute inset-0"
           style={{
@@ -142,11 +193,12 @@ const SaasProducts = () => {
           <span className="tag mb-4 inline-block">What I Own</span>
           <h2 className="section-heading">SaaS Products I Own</h2>
           <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-            Beyond client work, I design, build, and run these as real products — full-stack, end to end.
+            Beyond client work, here's everything I design, build, and ship myself — commercial SaaS
+            platforms, open-source tools, and this portfolio itself.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(product => (
             <ProductCard key={product.name} product={product} />
           ))}

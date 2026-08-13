@@ -1,7 +1,7 @@
 import React from 'react';
 
 const stats = [
-  { label: 'Years Experience', value: '3+' },
+  { label: 'Years Experience', value: '4+' },
   { label: 'Projects Built', value: '6+' },
   { label: 'Technologies', value: '15+' },
   { label: 'Open Source Contributions', value: '10+' },
@@ -18,7 +18,7 @@ const About = () => {
 
             <div className="space-y-4" style={{ color: 'var(--color-text-secondary)' }}>
               <p className="leading-relaxed text-base">
-                I'm an AI Engineer and Python Developer with over 3+ years of experience building
+                I'm an AI Engineer and Python Developer with over 4+ years of experience building
                 scalable backend systems and intelligent applications. I specialize in Generative AI,
                 LLMs, and RAG-based solutions, turning complex data and workflows into impactful,
                 production-ready systems.
