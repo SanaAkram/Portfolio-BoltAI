@@ -36,7 +36,7 @@ const products = [
     stats: ['Gmail OAuth intake', 'LLM email classification', 'Daily AI-generated briefings'],
     status: 'Open Source',
     accent: '#38bdf8',
-    image: 'images/image.png',
+    image: '/images/inbox_pilot_banner.png',
     url: 'https://inbox-pilot-lemon-six.vercel.app/',
     cta: 'Visit Inbox Pilot',
   },
