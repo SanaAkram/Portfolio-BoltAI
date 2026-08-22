@@ -37,8 +37,8 @@ const products = [
     status: 'Open Source',
     accent: '#38bdf8',
     image: null,
-    url: 'https://github.com/SanaAkram/InboxPilot',
-    cta: 'View on GitHub',
+    url: 'https://inbox-pilot-lemon-six.vercel.app/',
+    cta: 'Visit Inbox Pilot',
   },
   {
     name: 'Sana AI',
