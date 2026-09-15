@@ -6,6 +6,13 @@ const products = [
     tagline: "Pakistan's AI calling platform for lead follow-up",
     description:
       "A multi-tenant SaaS for businesses that don't have a lead-callback system. A client embeds a widget or lead form on their site — the moment a visitor submits it, an AI voice agent calls them back within ~60 seconds and holds a real conversation (Urdu or English) over a live phone call, then logs the transcript, recording, and outcome to a dashboard. Also handles appointment booking/reminders and customer re-engagement campaigns.",
+    architecture: [
+      'Widget/lead-form embed on the client’s site',
+      'AI voice agent calls back within ~60 seconds, in Urdu or English',
+      'Transcript, recording, and outcome logged to a client dashboard',
+      'Appointment booking/reminders and customer re-engagement campaigns',
+      'Built on AWS Lambda, DynamoDB, and S3',
+    ],
     tags: ['Next.js', 'TypeScript', 'AWS (Lambda, DynamoDB, S3)', 'Python', 'LiveKit', 'OpenAI'],
     stats: ['~60s avg callback', '98% call connection rate', 'Free – PKR 21,000/mo'],
     status: 'Live',
@@ -19,6 +26,13 @@ const products = [
     tagline: 'The AI recruiting engine, end to end',
     description:
       'A multi-tenant recruiting SaaS that parses every resume with GPT-4o, scores and routes candidates against a job’s real requirements with a transparent 100-point breakdown (skills, experience, GitHub signal, culture fit), then self-schedules and conducts AI phone interviews — screening every transcript for fraud and AI-generated answers before a human ever gets involved.',
+    architecture: [
+      'Resume parsing with GPT-4o',
+      '100-point transparent scoring: skills, experience, GitHub signal, culture fit',
+      'Automatic routing based on score',
+      'Self-scheduled AI phone interviews',
+      'Fraud and AI-generated-answer detection on every interview transcript',
+    ],
     tags: ['Next.js 16', 'TypeScript', 'DynamoDB', 'NextAuth', 'AWS (SST)', 'OpenAI'],
     stats: ['AI resume parsing', '100-point transparent scoring', 'Fraud detection built in'],
     status: 'Live',
@@ -32,6 +46,13 @@ const products = [
     tagline: 'AI email workflow automation',
     description:
       'A full-stack AI platform that connects to Gmail via OAuth, classifies incoming email with OpenAI, extracts actionable tasks, and generates daily briefings. Next.js dashboard with real-time analytics, FastAPI backend, PostgreSQL, containerized with Docker.',
+    architecture: [
+      'Gmail OAuth intake',
+      'OpenAI-based email classification',
+      'Actionable task extraction from email content',
+      'Daily AI-generated briefings',
+      'Next.js dashboard + FastAPI backend + PostgreSQL, containerized with Docker',
+    ],
     tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'PostgreSQL', 'Docker'],
     stats: ['Gmail OAuth intake', 'LLM email classification', 'Daily AI-generated briefings'],
     status: 'Open Source',
@@ -45,6 +66,13 @@ const products = [
     tagline: "Your shop's khata, your day, one app",
     description:
       'A mobile-first app for Pakistani shopkeepers — a digital udhaar ledger, cash book, stock book, and printable bills, plus prayer and routine reminders that actually reach you. Multiple businesses per account, in English, Urdu, and Roman Urdu.',
+    architecture: [
+      'Digital udhaar ledger, cash book, and stock book',
+      'Printable bills',
+      'Prayer and routine reminders',
+      'Multi-business accounts',
+      'English, Urdu, and Roman Urdu language support',
+    ],
     tags: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
     stats: ['Ledger, POS & Stock Book', 'Prayer & routine reminders', 'Multi-business dashboard'],
     status: 'Live',
@@ -58,6 +86,13 @@ const products = [
     tagline: 'AI-graded PTE Academic training, built for the family',
     description:
       'A real PTE Academic training platform — all 22 official task types with authentic timers, AI-graded Speaking and Writing feedback, a self-growing question bank, a voice-input Urdu/English translator, grammar drills, a daily study plan, full mock tests, and a progress dashboard for observers.',
+    architecture: [
+      'All 22 official PTE task types with authentic timers',
+      'AI-graded Speaking and Writing feedback',
+      'Self-growing question bank',
+      'Voice-input Urdu/English translator and grammar drills',
+      'Daily study plan, full mock tests, and a progress dashboard for observers',
+    ],
     tags: ['Next.js', 'TypeScript', 'Supabase', 'OpenAI', 'PostgreSQL'],
     stats: ['All 22 PTE task types', 'AI-graded Speaking & Writing', 'Self-growing question bank'],
     status: 'Live',
@@ -71,6 +106,13 @@ const products = [
     tagline: "The AI-powered portfolio you'd chat with instead of scrolling",
     description:
       "An interactive portfolio built as an AI persona instead of static sections — visitors ask 'Sana AI' questions and it answers using this exact real background, grounded in a knowledge base instead of freely improvising. Built with React, TypeScript, Tailwind, Framer Motion, a WebGL fluid cursor effect, and an OpenAI-backed Edge Function.",
+    architecture: [
+      'Knowledge-base-grounded system prompt — answers from real background, not free improvisation',
+      'OpenAI-backed Vercel Edge Function streaming responses',
+      'React + TypeScript + Tailwind frontend',
+      'WebGL fluid cursor effect for the background',
+      'Framer Motion for UI animation',
+    ],
     tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'OpenAI'],
     stats: ['Streaming AI chat', 'Interactive WebGL fluid background', 'Grounded, not freely improvised'],
     status: 'Live',
@@ -84,6 +126,11 @@ const products = [
     tagline: 'My classic single-page portfolio',
     description:
       "A traditional portfolio site — About, Projects, SaaS Products, Education, Skills, and Contact all in one scrollable page. You're looking at it right now.",
+    architecture: [
+      'Single-page React + Vite app',
+      'Section-per-component structure (About, Projects, SaaS Products, Education, Skills, Contact)',
+      'Tailwind CSS with CSS custom-property theming',
+    ],
     tags: ['React', 'Vite', 'Tailwind'],
     stats: ['Full case-study project write-ups', 'Client testimonials', 'Downloadable résumé'],
     status: 'Live',
@@ -170,29 +217,60 @@ const ProductModal = ({ product, onClose }) => {
             {product.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            {product.tags.map(tag => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-1 rounded-md"
-                style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
-              >
-                {tag}
-              </span>
-            ))}
+          {product.architecture && (
+            <div className="mb-8">
+              <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+                Architecture
+              </h3>
+              <ol className="space-y-2">
+                {product.architecture.map((step, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                    <span
+                      className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold mt-0.5"
+                      style={{ background: `${product.accent}20`, color: product.accent, border: `1px solid ${product.accent}50` }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          <div className="mb-6">
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+              Tech Stack
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {product.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 rounded-md"
+                  style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <ul className="space-y-2 mb-8">
-            {product.stats.map(stat => (
-              <li key={stat} className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-                <svg className="w-4 h-4 shrink-0" viewBox="0 0 14 14" fill="none">
-                  <circle cx="7" cy="7" r="6" fill={`${product.accent}20`} stroke={`${product.accent}50`} />
-                  <path d="M4.5 7l2 2 3-3" stroke={product.accent} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {stat}
-              </li>
-            ))}
-          </ul>
+          <div className="mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+              Highlights
+            </h3>
+            <ul className="space-y-2">
+              {product.stats.map(stat => (
+                <li key={stat} className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6" fill={`${product.accent}20`} stroke={`${product.accent}50`} />
+                    <path d="M4.5 7l2 2 3-3" stroke={product.accent} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {stat}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {product.url ? (
             <a

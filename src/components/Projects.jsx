@@ -4,6 +4,15 @@ const projects = [
   {
     title: 'Ylopo AI Voice — Real Estate Lead Engagement',
     description: "Led development of the AI voice agent inside Ylopo AI² — a combined text-and-voice lead engagement engine that has placed 5+ million AI calls. Handles behavior-triggered outreach (new leads, site returns, favorited listings), attempts contact up to 14 times over 90 days, achieves a 45% answer rate and 9% live-transfer rate, and hands qualified leads to the right agent within 5–8 minutes. Architected the full pipeline — Eligibility Service, Dialer, Vocode, Transcript Processing, Insights Engine, and Grading System — built the LiveKit-based real-time voice agents with STT/TTS integration, and connected it into CRMs like Follow Up Boss for automatic lead assignment and call logging.",
+    architecture: [
+      'Eligibility Service — decides which leads qualify for AI outreach based on behavior triggers (new leads, site returns, favorited listings)',
+      'Dialer — places the outbound call and manages up to 14 contact attempts over 90 days',
+      'Vocode — real-time voice orchestration with LiveKit-based STT/TTS',
+      'Transcript Processing — parses and structures the raw call transcript',
+      'Insights Engine — extracts structured lead data from the conversation',
+      'Grading System — scores agent performance and call quality',
+      'CRM Integration — pushes call notes, outcomes, and lead assignment into Follow Up Boss',
+    ],
     tags: ['Python', 'LiveKit', 'Vocode', 'AWS Step Functions', 'OpenAI', 'CRM Integration', 'Real-Time Voice AI', 'System Design', 'Distributed Systems'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
@@ -13,6 +22,12 @@ const projects = [
   {
     title: 'LiveKit X Memory Arcs',
     description: 'Built real-time AI voice agents using LiveKit library for conversational handling of Memory Arcs. Implemented STT/TTS pipelines, low-latency streaming, and intelligent fallback logic for scalable conversational systems.',
+    architecture: [
+      'LiveKit real-time voice agent as the conversational core',
+      'STT/TTS pipeline for speech in and out',
+      'Low-latency streaming layer for natural back-and-forth',
+      'Intelligent fallback logic to keep the conversation reliable under network/API issues',
+    ],
     tags: ['Python', 'LiveKit', 'Vocode', 'AWS SAM', 'LLMs', 'Realtime Systems'],
     github: 'https://github.com/SanaAkram',
     demo: "https://www.memoryarcs.com",
@@ -22,6 +37,13 @@ const projects = [
   {
     title: 'AI Real Estate Video Generation System',
     description: "Built the AI pipeline behind Ylopo's 3D virtual house tours — MLS listing photos go in, and the system automatically selects the best angles, stitches them into an interactive 'digital twin' walkthrough with AI-generated voice-over narration, and ships it fully optimized for CRM, social, and listing-site distribution. Listings with these tours see 3x higher click rates and 2x higher lead generation.",
+    architecture: [
+      'Ingest MLS listing photos',
+      'Computer vision selects the best angles automatically',
+      'Stitches selected shots into an interactive "digital twin" walkthrough',
+      'AI-generated voice-over narration layered on top',
+      'Output optimized and shipped for CRM, social, and listing-site distribution',
+    ],
     tags: ['Python', 'Computer Vision', 'Automation', 'AI'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/virtual-house-tours',
@@ -30,7 +52,13 @@ const projects = [
   },
   {
     title: 'AI Voice Grading System (LLM Evaluation Engine)',
-    description: 'Developed an AI-powered grading platform that evaluates call transcripts using LLMs. Automated QA processes by scoring agent performance and generating actionable insights using prompt engineering.',
+    description: "Built the automated QA layer for Ylopo AI Voice — the voice engine that has placed 5+ million AI calls across enterprise real estate campaigns including Ylopo, RDC, and JMG. Every call transcript runs through an LLM-based grading pipeline that scores agent performance and call quality, eliminating manual QA entirely, and feeds its output into the same Insights Engine and Dialer that route qualified leads to the right agent within 5–8 minutes. Designed the prompt-engineered scoring pipeline and the AWS Step Functions-based reporting layer behind it.",
+    architecture: [
+      'Ingests call transcripts from the voice pipeline',
+      'LLM-based scoring of agent performance and call quality (prompt-engineered rubric)',
+      'AWS Step Functions orchestrates the grading + reporting workflow',
+      'Results feed back into the Insights Engine and Dialer for lead routing decisions',
+    ],
     tags: ['Python', 'OpenAI', 'Prompt Engineering', 'LLMs', 'AWS Step Functions'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
@@ -40,6 +68,13 @@ const projects = [
   {
     title: 'Transcript Insights & Processing Engine',
     description: "Built the backend behind Ylopo Direct Connect — an intelligence layer that turns raw lead conversations into structured, data-rich buyer profiles instead of basic contact info. The engine processes a 3-phase qualification flow (Initial Profile Creation, Contact Verification, Demographic Profiling), extracting up to 20+ data points per lead — search criteria, verified contact info, and buying-situation details — so agents only talk to pre-qualified, expecting-your-call buyers. Designed the Flask APIs, YAML-based prompt pipelines, and Pytest test suite that power the insight extraction.",
+    architecture: [
+      'Phase 1 — Initial Profile Creation: up to 9 questions on home search preferences',
+      'Phase 2 — Contact Verification: leads verify contact info via text or phone (no fake emails/numbers)',
+      'Phase 3 — Demographic Profiling: 11–13 additional questions on buying situation',
+      'Flask APIs + YAML-based prompt pipelines extract 20+ structured data points per lead',
+      'Pytest suite covering the insight-extraction pipeline',
+    ],
     tags: ['Flask', 'LLMs', 'Pytest', 'REST APIs', 'Data Pipelines'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ai2',
@@ -49,6 +84,11 @@ const projects = [
   {
     title: 'Large-Scale Web Scraping & Data Pipeline',
     description: 'Built scalable scraping systems using Selenium and Pandas to collect millions of real estate and influencer data points. Designed efficient ETL pipelines for downstream AI applications.',
+    architecture: [
+      'Selenium-driven scraping layer across target sites',
+      'Pandas-based cleaning and transformation of raw scraped data',
+      'ETL pipeline feeding structured data into downstream AI applications',
+    ],
     tags: ['Python', 'Selenium', 'Pandas', 'ETL', 'Data Engineering'],
     github: 'https://github.com/SanaAkram',
     demo: null,
@@ -58,6 +98,12 @@ const projects = [
   {
     title: 'GMaps Scrapper',
     description: "Paste a Google Maps search link and get back an Excel sheet of every business's name, category, rating, phone, address, and social profile links — scraped via a headless-Chromium job queue with progress polling and .xlsx export.",
+    architecture: [
+      'Submit a Google Maps search link to create a scrape job',
+      'Headless-Chromium job queue processes the job in the background',
+      'Progress polling API reports job status',
+      '.xlsx export of business name, category, rating, phone, address, and social profile links',
+    ],
     tags: ['Node.js', 'Express', 'Playwright', 'Web Scraping'],
     github: 'https://github.com/SanaAkram/Gmaps-Scrapper',
     demo: null,
@@ -100,7 +146,16 @@ const ProjectModal = ({ project, onClose }) => {
           </svg>
         </button>
 
-        {!project.video && project.image && (
+        {project.video ? (
+          <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src={project.video}
+              frameBorder="0"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+          </div>
+        ) : project.image && (
           <div className="relative overflow-hidden" style={{ height: '14rem' }}>
             <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
             <div
@@ -120,16 +175,42 @@ const ProjectModal = ({ project, onClose }) => {
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.tags.map(tag => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-1 rounded-md"
-                style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
-              >
-                {tag}
-              </span>
-            ))}
+          {project.architecture && (
+            <div className="mb-8">
+              <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+                Architecture
+              </h3>
+              <ol className="space-y-2">
+                {project.architecture.map((step, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                    <span
+                      className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold mt-0.5"
+                      style={{ background: 'rgba(56, 189, 248, 0.12)', color: 'var(--color-accent)', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          <div className="mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+              Tech Stack
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 rounded-md"
+                  style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-3">
