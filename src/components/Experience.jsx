@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const experience = [
   {
@@ -44,47 +44,73 @@ const experience = [
   },
 ];
 
-const ExperienceCard = ({ role }) => (
-  <div className="glass-card rounded-xl p-6 relative">
-    <div className="flex items-start gap-4">
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
-        style={{ background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}
-      >
-        💼
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
-          <h3 className="font-semibold text-base" style={{ color: 'var(--color-text-primary)' }}>
-            {role.title}
-          </h3>
-          <span className="tag text-xs flex-shrink-0">
-            {role.period}
-            {role.current && ' · Current'}
-          </span>
-        </div>
-        <p className="font-medium text-sm mb-1" style={{ color: 'var(--color-accent)' }}>
-          {role.company}
-        </p>
-        <p className="text-sm mb-4" style={{ color: 'var(--color-text-secondary)' }}>
-          {role.location}
-        </p>
+const ExperienceCard = ({ role, defaultOpen }) => {
+  const [open, setOpen] = useState(defaultOpen);
 
-        <ul className="space-y-2">
-          {role.highlights.map((h, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-              <svg className="w-3.5 h-3.5 shrink-0 mt-1" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="6" fill="rgba(56, 189, 248, 0.12)" />
-                <path d="M4.5 7l2 2 3-3" stroke="var(--color-accent)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span>{h}</span>
-            </li>
-          ))}
-        </ul>
+  return (
+    <div className="glass-card rounded-xl p-6 relative">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-start gap-4 text-left"
+        aria-expanded={open}
+      >
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+          style={{ background: 'rgba(56, 189, 248, 0.1)', border: '1px solid rgba(56, 189, 248, 0.2)' }}
+        >
+          💼
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
+            <h3 className="font-semibold text-base" style={{ color: 'var(--color-text-primary)' }}>
+              {role.title}
+            </h3>
+            <span className="tag text-xs flex-shrink-0">
+              {role.period}
+              {role.current && ' · Current'}
+            </span>
+          </div>
+          <p className="font-medium text-sm mb-1" style={{ color: 'var(--color-accent)' }}>
+            {role.company}
+          </p>
+          <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+            {role.location}
+          </p>
+        </div>
+        <svg
+          className="w-4 h-4 flex-shrink-0 mt-1 transition-transform duration-300"
+          style={{ color: 'var(--color-text-secondary)', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div
+        className="grid transition-all duration-300 ease-out"
+        style={{ gridTemplateRows: open ? '1fr' : '0fr', opacity: open ? 1 : 0 }}
+      >
+        <div className="overflow-hidden">
+          <ul className="space-y-2 pt-4 pl-16">
+            {role.highlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                <svg className="w-3.5 h-3.5 shrink-0 mt-1" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="6" fill="rgba(56, 189, 248, 0.12)" />
+                  <path d="M4.5 7l2 2 3-3" stroke="var(--color-accent)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Experience = () => {
   return (
@@ -97,7 +123,7 @@ const Experience = () => {
 
         <div className="space-y-6">
           {experience.map((role, idx) => (
-            <ExperienceCard key={idx} role={role} />
+            <ExperienceCard key={idx} role={role} defaultOpen={role.current} />
           ))}
         </div>
       </div>

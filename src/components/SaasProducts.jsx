@@ -153,12 +153,22 @@ const ProductCard = ({ product }) => {
         <p className="text-sm font-medium mb-4" style={{ color: product.accent }}>
           {product.tagline}
         </p>
-        <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: 'var(--color-text-secondary)' }}>
+        <p
+          className="text-sm leading-relaxed mb-5"
+          style={{
+            color: 'var(--color-text-secondary)',
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+          title={product.description}
+        >
           {product.description}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-5">
-          {product.tags.map(tag => (
+          {product.tags.slice(0, 5).map(tag => (
             <span
               key={tag}
               className="text-xs px-2 py-1 rounded-md"
@@ -171,6 +181,18 @@ const ProductCard = ({ product }) => {
               {tag}
             </span>
           ))}
+          {product.tags.length > 5 && (
+            <span
+              className="text-xs px-2 py-1 rounded-md"
+              style={{
+                background: 'rgba(15, 23, 42, 0.8)',
+                color: 'var(--color-text-secondary)',
+                border: '1px solid var(--color-border)',
+              }}
+            >
+              +{product.tags.length - 5}
+            </span>
+          )}
         </div>
 
         <ul className="space-y-1.5 mb-6">
