@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 const projects = [
   {
+    title: 'Ylopo AI Voice — Real Estate Lead Engagement',
+    description: "Led development of the AI voice agent inside Ylopo AI² — a combined text-and-voice lead engagement engine that has placed 5+ million AI calls. Handles behavior-triggered outreach (new leads, site returns, favorited listings), attempts contact up to 14 times over 90 days, achieves a 45% answer rate and 9% live-transfer rate, and hands qualified leads to the right agent within 5–8 minutes. Architected the full pipeline — Eligibility Service, Dialer, Vocode, Transcript Processing, Insights Engine, and Grading System — built the LiveKit-based real-time voice agents with STT/TTS integration, and connected it into CRMs like Follow Up Boss for automatic lead assignment and call logging.",
+    tags: ['Python', 'LiveKit', 'Vocode', 'AWS Step Functions', 'OpenAI', 'CRM Integration', 'Real-Time Voice AI'],
+    github: 'https://github.com/SanaAkram',
+    demo: 'https://www.ylopo.com/ylopo-ai-voice',
+    image: '/images/ylopo-ai-voice-banner.png',
+    featured: true,
+  },
+  {
     title: 'LiveKit X Memory Arcs',
     description: 'Built real-time AI voice agents using LiveKit library for conversational handling of Memory Arcs. Implemented STT/TTS pipelines, low-latency streaming, and intelligent fallback logic for scalable conversational systems.',
     tags: ['Python', 'LiveKit', 'Vocode', 'AWS SAM', 'LLMs', 'Realtime Systems'],
@@ -16,7 +25,7 @@ const projects = [
     tags: ['Python', 'OpenAI', 'Prompt Engineering', 'LLMs', 'AWS Step Functions'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/ylopo-ai-voice-banner.png',
     featured: true,
   },
   {
@@ -25,7 +34,7 @@ const projects = [
     tags: ['Flask', 'LLMs', 'Pytest', 'REST APIs', 'Data Pipelines'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/ylopo-ai-voice-banner.png',
     featured: true,
   },
   {
@@ -34,7 +43,7 @@ const projects = [
     tags: ['System Design', 'AWS', 'State Machines', 'Distributed Systems'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
-    image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/ylopo-ai-voice-banner.png',
     featured: false,
   },
   {
@@ -43,16 +52,16 @@ const projects = [
     tags: ['Python', 'Selenium', 'Pandas', 'ETL', 'Data Engineering'],
     github: 'https://github.com/SanaAkram',
     demo: null,
-    image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
     featured: false,
   },
   {
     title: 'AI Real Estate Video Generation System',
-    description: 'Developed an AI-powered virtual tour system combining image classification with automated video generation for real estate listings.',
+    description: "Built the AI pipeline behind Ylopo's 3D virtual house tours — MLS listing photos go in, and the system automatically selects the best angles, stitches them into an interactive 'digital twin' walkthrough with AI-generated voice-over narration, and ships it fully optimized for CRM, social, and listing-site distribution. Listings with these tours see 3x higher click rates and 2x higher lead generation.",
     tags: ['Python', 'Computer Vision', 'Automation', 'AI'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/virtual-house-tours',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/ylopo-virtual-tours-banner.png',
     featured: false,
   },
   {
