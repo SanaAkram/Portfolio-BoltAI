@@ -38,6 +38,18 @@ const navLinks = [
     ),
   },
   {
+    href: '#automations',
+    label: 'Automations',
+    icon: (
+      <svg viewBox="0 0 256 256" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="48" cy="64" r="22" fill="currentColor" />
+        <circle cx="208" cy="64" r="22" fill="currentColor" />
+        <circle cx="128" cy="200" r="22" fill="currentColor" />
+        <path d="M48 86 L128 178 M208 86 L128 178" stroke="currentColor" strokeWidth="14" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+  },
+  {
     href: '#testimonials',
     label: 'Testimonials',
     icon: (
