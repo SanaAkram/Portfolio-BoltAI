@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const products = [
   {
@@ -94,11 +94,144 @@ const products = [
   },
 ];
 
-const ProductCard = ({ product }) => {
+const ProductModal = ({ product, onClose }) => {
+  const isLive = product.status === 'Live';
+
+  useEffect(() => {
+    const onKey = e => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-8 overflow-y-auto"
+      style={{ background: 'rgba(5, 8, 16, 0.85)', backdropFilter: 'blur(6px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-2xl my-4 sm:my-8 rounded-2xl overflow-hidden"
+        style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)' }}
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors z-10"
+          style={{ background: 'rgba(10, 14, 24, 0.6)', border: '1px solid var(--color-border)', color: '#fff', backdropFilter: 'blur(8px)' }}
+        >
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {product.image && (
+          <div className="relative overflow-hidden" style={{ height: '14rem' }}>
+            <img
+              src={product.image}
+              alt={`${product.name} homepage screenshot`}
+              className="w-full h-full object-cover object-top"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to top, var(--color-bg) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%)' }}
+            />
+          </div>
+        )}
+
+        <div className="p-6 sm:p-8" style={{ marginTop: product.image ? '-2.5rem' : 0 }}>
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+              style={{
+                background: isLive ? 'rgba(16, 185, 129, 0.15)' : 'rgba(148, 163, 184, 0.15)',
+                color: isLive ? '#10b981' : 'var(--color-text-secondary)',
+                border: `1px solid ${isLive ? 'rgba(16, 185, 129, 0.4)' : 'rgba(148, 163, 184, 0.4)'}`,
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: isLive ? '#10b981' : 'var(--color-text-secondary)' }} />
+              {product.status}
+            </span>
+          </div>
+
+          <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+            {product.name}
+          </h2>
+          <p className="text-sm font-medium mb-5" style={{ color: product.accent }}>
+            {product.tagline}
+          </p>
+
+          <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--color-text-secondary)' }}>
+            {product.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {product.tags.map(tag => (
+              <span
+                key={tag}
+                className="text-xs px-2 py-1 rounded-md"
+                style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <ul className="space-y-2 mb-8">
+            {product.stats.map(stat => (
+              <li key={stat} className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+                <svg className="w-4 h-4 shrink-0" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="6" fill={`${product.accent}20`} stroke={`${product.accent}50`} />
+                  <path d="M4.5 7l2 2 3-3" stroke={product.accent} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {stat}
+              </li>
+            ))}
+          </ul>
+
+          {product.url ? (
+            <a
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-lg transition-all hover:opacity-90"
+              style={{ background: product.accent, color: '#0B1220' }}
+            >
+              {product.cta}
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          ) : (
+            <div
+              className="text-center text-xs font-medium px-4 py-2.5 rounded-lg"
+              style={{ border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)' }}
+            >
+              Building in public — no public link yet
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProductCard = ({ product, onOpen }) => {
   const isLive = product.status === 'Live';
 
   return (
-    <div className="glass-card rounded-xl overflow-hidden group flex flex-col h-full">
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && onOpen()}
+      className="glass-card rounded-xl overflow-hidden group flex flex-col h-full text-left w-full cursor-pointer"
+    >
       {/* Banner — real screenshot of the live product, or a plain gradient fallback */}
       <div className="relative overflow-hidden" style={{ height: '12rem' }}>
         {product.image ? (
@@ -212,6 +345,7 @@ const ProductCard = ({ product }) => {
             href={product.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
             className="mt-auto flex items-center justify-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-lg transition-all hover:opacity-90"
             style={{ background: product.accent, color: '#0B1220' }}
           >
@@ -234,6 +368,8 @@ const ProductCard = ({ product }) => {
 };
 
 const SaasProducts = () => {
+  const [activeProduct, setActiveProduct] = useState(null);
+
   return (
     <section id="saas-products" className="py-24" style={{ background: 'var(--color-bg-secondary)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -248,10 +384,12 @@ const SaasProducts = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(product => (
-            <ProductCard key={product.name} product={product} />
+            <ProductCard key={product.name} product={product} onOpen={() => setActiveProduct(product)} />
           ))}
         </div>
       </div>
+
+      {activeProduct && <ProductModal product={activeProduct} onClose={() => setActiveProduct(null)} />}
     </section>
   );
 };
