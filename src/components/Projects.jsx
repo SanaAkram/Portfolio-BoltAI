@@ -165,7 +165,7 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
         )}
 
-        <div className="p-6 sm:p-8" style={{ marginTop: !project.video && project.image ? '-2.5rem' : 0 }}>
+        <div className="p-6 sm:p-8">
           {project.featured && <span className="tag mb-3 inline-block">Featured</span>}
           <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>
             {project.title}

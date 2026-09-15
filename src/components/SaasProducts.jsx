@@ -191,7 +191,7 @@ const ProductModal = ({ product, onClose }) => {
           </div>
         )}
 
-        <div className="p-6 sm:p-8" style={{ marginTop: product.image ? '-2.5rem' : 0 }}>
+        <div className="p-6 sm:p-8">
           <div className="flex items-center gap-2 mb-3">
             <span
               className="flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
