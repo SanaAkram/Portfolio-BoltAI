@@ -171,7 +171,7 @@ const ProjectCard = ({ project, onOpen }) => {
       tabIndex={0}
       onClick={onOpen}
       onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && onOpen()}
-      className="glass-card rounded-xl overflow-hidden group flex flex-col cursor-pointer"
+      className="glass-card rounded-xl overflow-hidden group h-full flex flex-col cursor-pointer"
     >
       <div className="relative overflow-hidden" style={{ height: project.video ? 'auto' : '12rem' }}>
         {project.video ? (
@@ -210,16 +210,25 @@ const ProjectCard = ({ project, onOpen }) => {
         )}
       </div>
 
-      <div className="p-6 flex flex-col">
+      <div className="p-6 flex flex-col flex-1">
         <h3 className="text-lg font-semibold mb-2 group-hover:text-sky-400 transition-colors" style={{ color: 'var(--color-text-primary)' }}>
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--color-text-secondary)' }}>
+        <p
+          className="text-sm leading-relaxed mb-4"
+          style={{
+            color: 'var(--color-text-secondary)',
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-5">
-          {project.tags.map(tag => (
+        <div className="flex flex-wrap gap-2 mb-5 mt-auto">
+          {project.tags.slice(0, 5).map(tag => (
             <span
               key={tag}
               className="text-xs px-2 py-1 rounded-md"
@@ -232,6 +241,18 @@ const ProjectCard = ({ project, onOpen }) => {
               {tag}
             </span>
           ))}
+          {project.tags.length > 5 && (
+            <span
+              className="text-xs px-2 py-1 rounded-md"
+              style={{
+                background: 'rgba(15, 23, 42, 0.8)',
+                color: 'var(--color-text-secondary)',
+                border: '1px solid var(--color-border)',
+              }}
+            >
+              +{project.tags.length - 5}
+            </span>
+          )}
         </div>
 
         <div className="flex gap-3">
@@ -302,7 +323,7 @@ const Projects = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayed.map(project => (
             <ProjectCard key={project.title} project={project} onOpen={() => setActiveProject(project)} />
           ))}

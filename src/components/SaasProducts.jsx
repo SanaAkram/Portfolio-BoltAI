@@ -230,7 +230,7 @@ const ProductCard = ({ product, onOpen }) => {
       tabIndex={0}
       onClick={onOpen}
       onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && onOpen()}
-      className="glass-card rounded-xl overflow-hidden group flex flex-col text-left w-full cursor-pointer"
+      className="glass-card rounded-xl overflow-hidden group flex flex-col h-full text-left w-full cursor-pointer"
     >
       {/* Banner — real screenshot of the live product, or a plain gradient fallback */}
       <div className="relative overflow-hidden" style={{ height: '12rem' }}>
@@ -279,19 +279,28 @@ const ProductCard = ({ product, onOpen }) => {
         </span>
       </div>
 
-      <div className="p-6 sm:p-8 flex flex-col">
+      <div className="p-6 sm:p-8 flex flex-col flex-1">
         <h3 className="text-xl font-bold mb-1" style={{ color: 'var(--color-text-primary)' }}>
           {product.name}
         </h3>
         <p className="text-sm font-medium mb-4" style={{ color: product.accent }}>
           {product.tagline}
         </p>
-        <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--color-text-secondary)' }}>
+        <p
+          className="text-sm leading-relaxed mb-5"
+          style={{
+            color: 'var(--color-text-secondary)',
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
           {product.description}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-5">
-          {product.tags.map(tag => (
+          {product.tags.slice(0, 5).map(tag => (
             <span
               key={tag}
               className="text-xs px-2 py-1 rounded-md"
@@ -304,6 +313,18 @@ const ProductCard = ({ product, onOpen }) => {
               {tag}
             </span>
           ))}
+          {product.tags.length > 5 && (
+            <span
+              className="text-xs px-2 py-1 rounded-md"
+              style={{
+                background: 'rgba(15, 23, 42, 0.8)',
+                color: 'var(--color-text-secondary)',
+                border: '1px solid var(--color-border)',
+              }}
+            >
+              +{product.tags.length - 5}
+            </span>
+          )}
         </div>
 
         <ul className="space-y-1.5 mb-6">
@@ -360,7 +381,7 @@ const SaasProducts = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(product => (
             <ProductCard key={product.name} product={product} onOpen={() => setActiveProduct(product)} />
           ))}
