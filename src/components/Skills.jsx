@@ -109,8 +109,7 @@ const Skills = () => {
     <section id="skills" className="py-24 overflow-hidden" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <span className="tag mb-4 inline-block">Technical Expertise</span>
-          <h2 className="section-heading">Skills</h2>
+          <h2 className="section-heading"><span className="heading-slash">/</span>Skills</h2>
         </div>
 
         <div className="marquee-pause space-y-4">

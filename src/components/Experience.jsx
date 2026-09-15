@@ -117,8 +117,7 @@ const Experience = () => {
     <section id="experience" className="py-24" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <span className="tag mb-4 inline-block">Career So Far</span>
-          <h2 className="section-heading">Experience</h2>
+          <h2 className="section-heading"><span className="heading-slash">/</span>Experience</h2>
         </div>
 
         <div className="space-y-6">

@@ -53,8 +53,7 @@ const Education = () => {
     <section id="education" className="py-24" style={{ background: 'var(--color-bg-secondary)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <span className="tag mb-4 inline-block">Academic Background</span>
-          <h2 className="section-heading">Education</h2>
+          <h2 className="section-heading"><span className="heading-slash">/</span>Education</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

@@ -39,8 +39,7 @@ const Contact = () => {
       <section id="github" className="py-24" style={{ background: 'var(--color-bg-secondary)' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <span className="tag mb-4 inline-block">Open Source</span>
-            <h2 className="section-heading">GitHub Activity</h2>
+            <h2 className="section-heading"><span className="heading-slash">/</span>GitHub</h2>
           </div>
 
           <div className="grid grid-cols-1 gap-6 mb-10">
@@ -94,9 +93,11 @@ const Contact = () => {
       <section id="contact" className="py-24" style={{ background: 'var(--color-bg)' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="tag mb-4 inline-block">Get In Touch</span>
-            <h2 className="section-heading inline-block mx-auto">Let's Work Together</h2>
-            <p className="mt-6 text-base" style={{ color: 'var(--color-text-secondary)' }}>
+            <h2 className="section-heading inline-block mx-auto"><span className="heading-slash">/</span>Contact</h2>
+            <p className="mt-6 text-base font-medium" style={{ color: 'var(--color-text-primary)' }}>
+              Let's Work Together
+            </p>
+            <p className="mt-2 text-base" style={{ color: 'var(--color-text-secondary)' }}>
               I'm currently open to new opportunities. Whether you have a project in mind
               or just want to chat — my inbox is always open.
             </p>

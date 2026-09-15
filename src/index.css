@@ -185,6 +185,10 @@ body {
   display: inline-block;
 }
 
+.heading-slash {
+  color: var(--color-accent);
+}
+
 .section-heading::after {
   content: '';
   position: absolute;

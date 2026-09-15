@@ -451,8 +451,7 @@ const SaasProducts = () => {
     <section id="saas-products" className="py-24" style={{ background: 'var(--color-bg-secondary)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="tag mb-4 inline-block">What I Own</span>
-          <h2 className="section-heading">SaaS Products I Own</h2>
+          <h2 className="section-heading"><span className="heading-slash">/</span>SaaS</h2>
           <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--color-text-secondary)' }}>
             Beyond client work, here's everything I design, build, and ship myself — commercial SaaS
             platforms, open-source tools, and this portfolio itself.

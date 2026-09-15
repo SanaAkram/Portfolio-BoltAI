@@ -13,8 +13,7 @@ const About = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="tag mb-4 inline-block">Who I Am</span>
-            <h2 className="section-heading mb-8">About Me</h2>
+            <h2 className="section-heading mb-8"><span className="heading-slash">/</span>About</h2>
 
             <div className="space-y-4" style={{ color: 'var(--color-text-secondary)' }}>
               <p className="leading-relaxed text-base">

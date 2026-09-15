@@ -163,8 +163,7 @@ const AutomationWorkflows = () => {
     <section id="automations" className="py-24" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="tag mb-4 inline-block">n8n Automation</span>
-          <h2 className="section-heading">Automation Workflows</h2>
+          <h2 className="section-heading"><span className="heading-slash">/</span>Automations</h2>
           <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--color-text-secondary)' }}>
             Before Recruit-AI existed as a coded product, I designed and ran its entire recruiting
             pipeline as a working n8n automation, end to end.
