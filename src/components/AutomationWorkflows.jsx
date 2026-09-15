@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const workflows = [
   {
@@ -43,12 +43,7 @@ const WorkflowCard = ({ workflow, isLast }) => (
   <div className="relative">
     <div
       className="glass-card rounded-xl overflow-hidden group transition-all duration-300"
-      style={{
-        borderTop: `3px solid ${workflow.accent}`,
-        boxShadow: `0 0 0 rgba(0,0,0,0)`,
-      }}
-      onMouseEnter={e => (e.currentTarget.style.boxShadow = `0 12px 40px -8px ${workflow.accent}55`)}
-      onMouseLeave={e => (e.currentTarget.style.boxShadow = `0 0 0 rgba(0,0,0,0)`)}
+      style={{ borderTop: `3px solid ${workflow.accent}` }}
     >
       <div className="relative">
         <a href={workflow.image} target="_blank" rel="noopener noreferrer" className="block">
@@ -86,11 +81,7 @@ const WorkflowCard = ({ workflow, isLast }) => (
             <span
               key={tag}
               className="text-xs px-2.5 py-1 rounded-md font-medium"
-              style={{
-                background: `${workflow.accent}15`,
-                color: workflow.accent,
-                border: `1px solid ${workflow.accent}35`,
-              }}
+              style={{ background: `${workflow.accent}15`, color: workflow.accent, border: `1px solid ${workflow.accent}35` }}
             >
               {tag}
             </span>
@@ -110,14 +101,44 @@ const WorkflowCard = ({ workflow, isLast }) => (
   </div>
 );
 
-const AutomationWorkflows = () => {
+const WorkflowModal = ({ onClose }) => {
+  useEffect(() => {
+    const onKey = e => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
   return (
-    <section id="automations" className="py-24" style={{ background: 'var(--color-bg)' }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+    <div
+      className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-8 overflow-y-auto"
+      style={{ background: 'rgba(5, 8, 16, 0.85)', backdropFilter: 'blur(6px)' }}
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-4xl my-4 sm:my-8 rounded-2xl p-5 sm:p-8"
+        style={{ background: 'var(--color-bg)', border: '1px solid var(--color-border)' }}
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="sticky top-0 float-right -mt-1 -mr-1 w-10 h-10 rounded-full flex items-center justify-center transition-colors z-10"
+          style={{ background: 'var(--color-bg-secondary)', border: '1px solid var(--color-border)', color: 'var(--color-text-secondary)' }}
+        >
+          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div className="mb-8 clear-both">
           <span className="tag mb-4 inline-block">n8n Automation</span>
-          <h2 className="section-heading">Automation Workflows</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+          <h2 className="section-heading mb-3">The Recruit-AI Pipeline</h2>
+          <p className="text-sm max-w-2xl" style={{ color: 'var(--color-text-secondary)' }}>
             Before Recruit-AI existed as a coded product, I designed and ran its entire recruiting
             pipeline as a working n8n automation — intake, AI scoring, interview scheduling, and
             offers, end to end. These are real diagrams of that workflow, generated from the actual
@@ -131,6 +152,84 @@ const AutomationWorkflows = () => {
           ))}
         </div>
       </div>
+    </div>
+  );
+};
+
+const AutomationWorkflows = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <section id="automations" className="py-24" style={{ background: 'var(--color-bg)' }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <span className="tag mb-4 inline-block">n8n Automation</span>
+          <h2 className="section-heading">Automation Workflows</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+            Before Recruit-AI existed as a coded product, I designed and ran its entire recruiting
+            pipeline as a working n8n automation, end to end.
+          </p>
+        </div>
+
+        <button
+          onClick={() => setOpen(true)}
+          className="glass-card rounded-xl overflow-hidden group w-full text-left transition-all duration-300 block"
+          style={{ borderTop: '3px solid #38bdf8' }}
+        >
+          <div className="relative grid grid-cols-2" style={{ height: '16rem' }}>
+            {workflows.map(w => (
+              <div key={w.title} className="relative overflow-hidden">
+                <img
+                  src={w.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: 'left top' }}
+                />
+                <div className="absolute inset-0" style={{ background: `${w.accent}22` }} />
+              </div>
+            ))}
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-colors"
+              style={{ background: 'rgba(10, 14, 24, 0.6)' }}
+            >
+              <span className="text-4xl font-black text-white">4 Steps</span>
+              <span
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-transform group-hover:scale-105"
+                style={{ background: '#38bdf8', color: '#0B1220' }}
+              >
+                Explore the Pipeline
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div className="p-6 sm:p-8">
+            <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              Recruit-AI — n8n Automation Pipeline
+            </h3>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--color-text-secondary)' }}>
+              Intake → Scoring & Routing → Interview Loop → Assessment + Final Round. Real diagrams
+              rendered from the actual exported n8n workflow JSON — click to see all 4 steps in detail.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['n8n', 'OpenAI', 'LiveKit', 'PostgreSQL', 'Slack'].map(tag => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 rounded-md"
+                  style={{ background: 'rgba(15, 23, 42, 0.8)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </button>
+      </div>
+
+      {open && <WorkflowModal onClose={() => setOpen(false)} />}
     </section>
   );
 };

@@ -41,6 +41,32 @@ const products = [
     cta: 'Visit Inbox Pilot',
   },
   {
+    name: 'MizanKhata',
+    tagline: "Your shop's khata, your day, one app",
+    description:
+      'A mobile-first app for Pakistani shopkeepers — a digital udhaar ledger, cash book, stock book, and printable bills, plus prayer and routine reminders that actually reach you. Multiple businesses per account, in English, Urdu, and Roman Urdu.',
+    tags: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    stats: ['Ledger, POS & Stock Book', 'Prayer & routine reminders', 'Multi-business dashboard'],
+    status: 'Live',
+    accent: '#d4922a',
+    image: '/images/mizankhata-banner.png',
+    url: 'https://roznamcha-amber.vercel.app',
+    cta: 'Visit MizanKhata',
+  },
+  {
+    name: 'Angrezi Safar',
+    tagline: 'AI-graded PTE Academic training, built for the family',
+    description:
+      'A real PTE Academic training platform — all 22 official task types with authentic timers, AI-graded Speaking and Writing feedback, a self-growing question bank, a voice-input Urdu/English translator, grammar drills, a daily study plan, full mock tests, and a progress dashboard for observers.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'OpenAI', 'PostgreSQL'],
+    stats: ['All 22 PTE task types', 'AI-graded Speaking & Writing', 'Self-growing question bank'],
+    status: 'Live',
+    accent: '#c9a45c',
+    image: '/images/ai-pte-training-banner.png',
+    url: 'https://ai-pte-training.vercel.app',
+    cta: 'Visit Angrezi Safar',
+  },
+  {
     name: 'Sana AI',
     tagline: "The AI-powered portfolio you'd chat with instead of scrolling",
     description:
