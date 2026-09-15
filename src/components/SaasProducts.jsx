@@ -36,9 +36,9 @@ const products = [
     stats: ['Gmail OAuth intake', 'LLM email classification', 'Daily AI-generated briefings'],
     status: 'Open Source',
     accent: '#38bdf8',
-    image: null,
-    url: 'https://github.com/SanaAkram/InboxPilot',
-    cta: 'View on GitHub',
+    image: '/images/inbox_pilot_banner.png',
+    url: 'https://inbox-pilot-lemon-six.vercel.app/',
+    cta: 'Visit Inbox Pilot',
   },
   {
     name: 'Sana AI',
