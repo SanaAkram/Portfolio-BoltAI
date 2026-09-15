@@ -50,6 +50,17 @@ const navLinks = [
     ),
   },
   {
+    href: '#experience',
+    label: 'Experience',
+    icon: (
+      <svg viewBox="0 0 256 256" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+        <rect x="28" y="80" width="200" height="140" rx="16" fill="none" stroke="currentColor" strokeWidth="14" />
+        <path d="M92 80V56a20 20 0 0 1 20-20h32a20 20 0 0 1 20 20v24" fill="none" stroke="currentColor" strokeWidth="14" strokeLinecap="round" />
+        <path d="M28 140h200" stroke="currentColor" strokeWidth="14" />
+      </svg>
+    ),
+  },
+  {
     href: '#testimonials',
     label: 'Testimonials',
     icon: (
