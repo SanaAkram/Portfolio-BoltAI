@@ -20,6 +20,15 @@ const projects = [
     featured: true,
   },
   {
+    title: 'AI Real Estate Video Generation System',
+    description: "Built the AI pipeline behind Ylopo's 3D virtual house tours — MLS listing photos go in, and the system automatically selects the best angles, stitches them into an interactive 'digital twin' walkthrough with AI-generated voice-over narration, and ships it fully optimized for CRM, social, and listing-site distribution. Listings with these tours see 3x higher click rates and 2x higher lead generation.",
+    tags: ['Python', 'Computer Vision', 'Automation', 'AI'],
+    github: 'https://github.com/SanaAkram',
+    demo: 'https://www.ylopo.com/virtual-house-tours',
+    image: '/images/ylopo-virtual-tours-banner.png',
+    featured: true,
+  },
+  {
     title: 'AI Voice Grading System (LLM Evaluation Engine)',
     description: 'Developed an AI-powered grading platform that evaluates call transcripts using LLMs. Automated QA processes by scoring agent performance and generating actionable insights using prompt engineering.',
     tags: ['Python', 'OpenAI', 'Prompt Engineering', 'LLMs', 'AWS Step Functions'],
@@ -44,15 +53,6 @@ const projects = [
     github: 'https://github.com/SanaAkram',
     demo: null,
     image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
-    featured: false,
-  },
-  {
-    title: 'AI Real Estate Video Generation System',
-    description: "Built the AI pipeline behind Ylopo's 3D virtual house tours — MLS listing photos go in, and the system automatically selects the best angles, stitches them into an interactive 'digital twin' walkthrough with AI-generated voice-over narration, and ships it fully optimized for CRM, social, and listing-site distribution. Listings with these tours see 3x higher click rates and 2x higher lead generation.",
-    tags: ['Python', 'Computer Vision', 'Automation', 'AI'],
-    github: 'https://github.com/SanaAkram',
-    demo: 'https://www.ylopo.com/virtual-house-tours',
-    image: '/images/ylopo-virtual-tours-banner.png',
     featured: false,
   },
   {
