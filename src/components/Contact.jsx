@@ -59,9 +59,9 @@ const Contact = () => {
             />
               <div className="grid grid-cols-3 gap-4 mb-6">
                 {[
-                  { label: 'Repositories', value: '42' },
-                  { label: 'Total Stars', value: '325' },
-                  { label: 'Followers', value: '180' },
+                  { label: 'Repositories', value: '45' },
+                  { label: 'Total Stars', value: '0' },
+                  { label: 'Followers', value: '7' },
                 ].map(item => (
                   <div
                     key={item.label}

@@ -2,9 +2,9 @@ import React from 'react';
 
 const stats = [
   { label: 'Years Experience', value: '4+' },
-  { label: 'Projects Built', value: '6+' },
-  { label: 'Technologies', value: '15+' },
-  { label: 'Open Source Contributions', value: '10+' },
+  { label: 'Projects Built', value: '39+' },
+  { label: 'Technologies', value: '30+' },
+  { label: 'Open Source Contributions', value: '6+' },
 ];
 
 const About = () => {
