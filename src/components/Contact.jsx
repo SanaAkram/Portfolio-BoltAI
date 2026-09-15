@@ -2,13 +2,6 @@ import React, { useState } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
 import emailjs from 'emailjs-com';
 
-const repoHighlights = [ 
-  { name: 'Lineups', stars: 124, forks: 38, lang: 'Django', langColor: '#3178c6' },
-  { name: 'realtime-chat-app', stars: 89, forks: 22, lang: 'Python', langColor: '#f7df1e' },
-  { name: 'ai-task-manager', stars: 67, forks: 15, lang: 'Python', langColor: '#3178c6' },
-  { name: 'devops-dashboard', stars: 45, forks: 12, lang: 'Python', langColor: '#3572A5' },
-];
-
 const Contact = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -95,60 +88,6 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 mb-10">
-            <div className="glass-card rounded-xl p-6">
-                <h3 className="font-semibold text-sm mb-4" style={{ color: 'var(--color-text-secondary)' }}>
-                  PINNED REPOSITORIES
-                </h3>
-                <div className="space-y-3">
-                  {repoHighlights.map(repo => (
-                    <a
-                      key={repo.name}
-                      href="https://github.com/SanaAkram"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-3 rounded-lg transition-all duration-200 group"
-                      style={{ background: 'rgba(15, 23, 42, 0.5)', border: '1px solid var(--color-border)' }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.borderColor = 'rgba(56, 189, 248, 0.3)';
-                        e.currentTarget.style.background = 'rgba(56, 189, 248, 0.04)';
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.borderColor = 'var(--color-border)';
-                        e.currentTarget.style.background = 'rgba(15, 23, 42, 0.5)';
-                      }}
-                    >
-                      <div>
-                        <p className="text-sm font-medium group-hover:text-sky-400 transition-colors" style={{ color: 'var(--color-text-primary)' }}>
-                          {repo.name}
-                        </p>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span
-                            className="w-2.5 h-2.5 rounded-full"
-                            style={{ background: repo.langColor }}
-                          />
-                          <span className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>{repo.lang}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 text-xs" style={{ color: 'var(--color-text-secondary)' }}>
-                        <span className="flex items-center gap-1">
-                          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                          </svg>
-                          {repo.stars}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                          </svg>
-                          {repo.forks}
-                        </span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
         </div>
       </section>
 

@@ -99,6 +99,24 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee-left 32s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee-left 42s linear infinite;
+}
+
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee-slow {
+  animation-play-state: paused;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }

@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'Ylopo AI Voice — Real Estate Lead Engagement',
     description: "Led development of the AI voice agent inside Ylopo AI² — a combined text-and-voice lead engagement engine that has placed 5+ million AI calls. Handles behavior-triggered outreach (new leads, site returns, favorited listings), attempts contact up to 14 times over 90 days, achieves a 45% answer rate and 9% live-transfer rate, and hands qualified leads to the right agent within 5–8 minutes. Architected the full pipeline — Eligibility Service, Dialer, Vocode, Transcript Processing, Insights Engine, and Grading System — built the LiveKit-based real-time voice agents with STT/TTS integration, and connected it into CRMs like Follow Up Boss for automatic lead assignment and call logging.",
-    tags: ['Python', 'LiveKit', 'Vocode', 'AWS Step Functions', 'OpenAI', 'CRM Integration', 'Real-Time Voice AI'],
+    tags: ['Python', 'LiveKit', 'Vocode', 'AWS Step Functions', 'OpenAI', 'CRM Integration', 'Real-Time Voice AI', 'System Design', 'Distributed Systems'],
     github: 'https://github.com/SanaAkram',
     demo: 'https://www.ylopo.com/ylopo-ai-voice',
     image: '/images/ylopo-ai-voice-banner.png',
@@ -30,21 +30,12 @@ const projects = [
   },
   {
     title: 'Transcript Insights & Processing Engine',
-    description: 'Built backend systems to process transcripts, generate insights, and classify leads using LLM pipelines. Designed APIs with Flask, YAML-based prompts, and implemented robust testing using Pytest.',
+    description: "Built the backend behind Ylopo Direct Connect — an intelligence layer that turns raw lead conversations into structured, data-rich buyer profiles instead of basic contact info. The engine processes a 3-phase qualification flow (Initial Profile Creation, Contact Verification, Demographic Profiling), extracting up to 20+ data points per lead — search criteria, verified contact info, and buying-situation details — so agents only talk to pre-qualified, expecting-your-call buyers. Designed the Flask APIs, YAML-based prompt pipelines, and Pytest test suite that power the insight extraction.",
     tags: ['Flask', 'LLMs', 'Pytest', 'REST APIs', 'Data Pipelines'],
     github: 'https://github.com/SanaAkram',
-    demo: 'https://www.ylopo.com/ylopo-ai-voice',
-    image: '/images/ylopo-ai-voice-banner.png',
+    demo: 'https://www.ylopo.com/ai2',
+    image: '/images/ylopo-direct-connect-banner.png',
     featured: true,
-  },
-  {
-    title: 'End-to-End AI Pipeline (Voice → Insights → Grading)',
-    description: 'Architected a complete AI workflow including Eligibility Service, Dialer, Vocode, Transcript Processing, Insights Engine, and Grading System. Ensured scalability, reliability, and low-latency processing.',
-    tags: ['System Design', 'AWS', 'State Machines', 'Distributed Systems'],
-    github: 'https://github.com/SanaAkram',
-    demo: 'https://www.ylopo.com/ylopo-ai-voice',
-    image: '/images/ylopo-ai-voice-banner.png',
-    featured: false,
   },
   {
     title: 'Large-Scale Web Scraping & Data Pipeline',
@@ -77,7 +68,7 @@ const projects = [
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="glass-card rounded-xl overflow-hidden group">
+    <div className="glass-card rounded-xl overflow-hidden group h-full flex flex-col">
       <div className="relative overflow-hidden" style={{ height: project.video ? 'auto' : '12rem' }}>
         {project.video ? (
           <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
@@ -115,16 +106,26 @@ const ProjectCard = ({ project }) => {
         )}
       </div>
 
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <h3 className="text-lg font-semibold mb-2 group-hover:text-sky-400 transition-colors" style={{ color: 'var(--color-text-primary)' }}>
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--color-text-secondary)' }}>
+        <p
+          className="text-sm leading-relaxed mb-4"
+          style={{
+            color: 'var(--color-text-secondary)',
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+          title={project.description}
+        >
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-5">
-          {project.tags.map(tag => (
+        <div className="flex flex-wrap gap-2 mb-5 mt-auto">
+          {project.tags.slice(0, 5).map(tag => (
             <span
               key={tag}
               className="text-xs px-2 py-1 rounded-md"
@@ -137,6 +138,18 @@ const ProjectCard = ({ project }) => {
               {tag}
             </span>
           ))}
+          {project.tags.length > 5 && (
+            <span
+              className="text-xs px-2 py-1 rounded-md"
+              style={{
+                background: 'rgba(15, 23, 42, 0.8)',
+                color: 'var(--color-text-secondary)',
+                border: '1px solid var(--color-border)',
+              }}
+            >
+              +{project.tags.length - 5}
+            </span>
+          )}
         </div>
 
         <div className="flex gap-3">
